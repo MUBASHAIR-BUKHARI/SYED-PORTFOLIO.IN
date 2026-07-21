@@ -1,1 +1,178 @@
+Create a production-quality `style.css` for a modern personal portfolio website.
 
+Requirements:
+- Use pure CSS only (no Bootstrap, Tailwind, Sass, Less, or frameworks).
+- Mobile-first, fully responsive design.
+- Clean, well-organized, and heavily commented.
+- Use CSS variables for colors, fonts, spacing, border radius, and shadows.
+- Use the "Poppins" font from Google Fonts.
+- Optimize for performance and accessibility.
+
+Design Style:
+- Premium dark theme.
+- Blue, cyan, and purple gradient accents.
+- Glassmorphism cards.
+- Smooth animations and transitions.
+- Modern UI inspired by Apple, Vercel, and GitHub.
+- Rounded corners.
+- Soft glowing effects.
+- Professional appearance.
+
+Create styles for the following sections:
+
+1. Global Reset
+- Universal selector
+- Body
+- Typography
+- Links
+- Images
+- Buttons
+- Lists
+- Selection color
+- Scroll behavior
+
+2. Custom Scrollbar
+- Modern thin scrollbar
+- Gradient thumb
+- Rounded corners
+
+3. Navigation Bar
+- Sticky navbar
+- Glass background
+- Blur effect
+- Logo
+- Navigation links
+- Hover underline animation
+- Active navigation
+- Mobile hamburger menu
+- Responsive navigation drawer
+
+4. Hero Section
+- Full-screen layout
+- Gradient background
+- Animated blobs
+- Profile image with glowing border
+- Name
+- Subtitle
+- Typing animation container
+- Call-to-action buttons
+- Social media icons
+- Floating decorative shapes
+
+5. About Section
+- Responsive two-column layout
+- Biography card
+- Career objective
+- Timeline cards
+- Glass effect
+
+6. Skills Section
+- Skill cards
+- Progress bars
+- Percentage labels
+- Hover animation
+- Responsive grid
+
+7. Education Section
+- Vertical timeline
+- Timeline icons
+- Timeline cards
+- Date badges
+- Responsive layout
+
+8. Projects Section
+- Responsive project grid
+- Project cards
+- Image container
+- Overlay effect
+- Hover zoom
+- Tech stack badges
+- Demo button
+- GitHub button
+
+9. Resume Section
+- Large download button
+- Gradient background
+- Hover glow animation
+
+10. Contact Section
+- Contact information cards
+- Contact form
+- Input fields
+- Textarea
+- Validation styles
+- Submit button
+- Icons
+
+11. Footer
+- Social icons
+- Copyright
+- Back-to-top button
+- Divider line
+
+12. Loading Screen
+- Full-screen preloader
+- Spinner animation
+- Fade-out effect
+
+13. Scroll Progress Bar
+- Fixed top progress indicator
+
+14. Back-to-Top Button
+- Floating circular button
+- Hover animation
+
+15. Dark/Light Theme Support
+- CSS variables for both themes
+- Smooth theme transition
+
+16. Utility Classes
+- Container
+- Grid
+- Flex
+- Hidden
+- Fade-in
+- Section spacing
+- Text alignment
+
+17. Animations
+Create keyframes for:
+- Fade In
+- Fade Up
+- Slide Left
+- Slide Right
+- Zoom In
+- Float
+- Pulse
+- Glow
+- Gradient Shift
+- Rotate
+- Bounce
+- Shine
+- Typing Cursor Blink
+
+18. Responsive Breakpoints
+- 320px
+- 480px
+- 768px
+- 992px
+- 1200px
+- 1440px
+
+19. Accessibility
+- Visible keyboard focus styles
+- High contrast support
+- Reduced motion support
+- Large touch targets
+
+20. Performance
+- Efficient selectors
+- Hardware-accelerated animations
+- Minimal layout shifts
+
+General Requirements:
+- Write clean, production-ready CSS.
+- Include clear comments for every section.
+- Ensure the website looks premium on desktop, tablet, and mobile.
+- Make every card, button, image, and section visually appealing with subtle animations and modern effects.
+- The final output should be a single complete `style.css` file ready for deployment on GitHub Pages.
