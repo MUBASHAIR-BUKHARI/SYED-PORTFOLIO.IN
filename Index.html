@@ -1,1 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Syed Mubashair Hussain - Electrical Engineering Student & Web Creator">
+    <meta name="author" content="Syed Mubashair Hussain">
+    <title>Syed Mubashair Hussain | Portfolio</title>
 
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           VARIABLES & RESET
+        ========================================= */
+        :root {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding { padding: 100px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #06b6d4;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           HERO SECTION
+        ========================================= */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.1), transparent);
+        }
+
+        .hero-content .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #06b6d4;
+            padding: 5px;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+            height: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid #06b6d4;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-hero {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .social-hero a:hover {
+            color: #06b6d4;
+        }
+
+        /* =========================================
+           ABOUT SECTION (Timeline)
+        ========================================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .timeline {
+            border-left: 2px solid #3b82f6;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #06b6d4;
+            border-radius: 50%;
+        }
+
+        /* =========================================
+           SKILLS SECTION
+        ========================================= */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--glass);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #334155;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-gradient);
+            width: 0;
+            transition: 2s ease-out;
+        }
+
+        /* =========================================
+           PROJECTS SECTION
+        ========================================= */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .contact-info-card {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: #06b6d4;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            padding: 15px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #06b6d4;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-gradient);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            visibility: hidden;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .back-to-top.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+        ========================================= */
+        @media (max-width: 992px) {
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Logic for JS toggle */
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--primary-bg);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">MH</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content" data-aos="zoom-in">
+            <img src="https://via.placeholder.com/180/0f172a/06b6d4?text=MH" alt="Syed Mubashair Hussain" class="profile-img">
+            <h1>Syed Mubashair Hussain</h1>
+            <h2><span id="typed"></span></h2>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 30px;">
+                Passionate Electrical Engineering student transitioning into the tech space. 
+                Focused on building seamless digital experiences and innovative engineering solutions.
+            </p>
+            <div class="btn-group">
+                <a href="#resume" class="btn btn-primary">Download Resume</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="social-hero">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:example@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="container section-padding">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text" data-aos="fade-right">
+                <h3>Who am I?</h3>
+                <p style="margin: 20px 0;">
+                    I am an Electrical Engineering student with a deep interest in web development and technology. 
+                    I bridge the gap between hardware logic and software creativity. My objective is to leverage 
+                    my analytical engineering background to build robust, scalable web applications.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div><strong>Strengths:</strong></div>
+                    <div><strong>Location:</strong></div>
+                    <div style="color: var(--text-dim);">Analytical Thinking</div>
+                    <div style="color: var(--text-dim);">Jammu & Kashmir, India</div>
+                    <div style="color: var(--text-dim);">Adaptability</div>
+                    <div style="color: var(--text-dim);">Quick Learner</div>
+                </div>
+            </div>
+            <div class="timeline" data-aos="fade-left">
+                <div class="timeline-item">
+                    <h4>Vision</h4>
+                    <p>To integrate IoT and smart engineering with modern web interfaces.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Current Focus</h4>
+                    <p>Completing Electrical Engineering degree while mastering Full Stack development.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Interests</h4>
+                    <p>Renewable Energy, AI Integration, and UI/UX Design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container section-padding">
+        <h2 class="section-title" data-aos="fade-up">Technical Expertise</h2>
+        <div class="skills-container">
+            <!-- Skill Items -->
+            <div class="skill-card" data-aos="flip-left">
+                <div class="skill-info"><span>HTML/CSS</span><span>95%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+                <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="skill-info"><span>Git & GitHub</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="skill-info"><span>Firebase</span><span>70%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="skill-info"><span>Responsive Design</span><span>90%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="500">
+                <div class="skill-info"><span>Problem Solving</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="container section-padding">
+        <h2 class="section-title" data-aos="fade-up">Education</h2>
+        <div class="timeline" style="max-width: 800px; margin: 0 auto;">
+            <div class="timeline-item" data-aos="fade-up">
+                <h3>Diploma in Electrical Engineering</h3>
+                <p>Government Polytechnic College | 2021 - 2024</p>
+                <p style="color: var(--text-dim);">CGPA: 8.5 (Placeholder)</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>12th Standard (JKBOSE)</h3>
+                <p>Higher Secondary School | 2021</p>
+                <p style="color: var(--text-dim);">Percentage: 85% (Placeholder)</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>10th Standard (JKBOSE)</h3>
+                <p>Public School | 2019</p>
+                <p style="color: var(--text-dim);">Percentage: 90% (Placeholder)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container section-padding">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-aos="fade-up">
+                <img src="https://via.placeholder.com/400x250/1e293b/06b6d4?text=Portfolio" alt="Project" class="project-img">
+                <div class="project-info">
+                    <h3>Modern Portfolio</h3>
+                    <p>A professional glassmorphism portfolio website built with HTML, CSS, and JS.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">AOS</span>
+                    </div>
+                    <div class="btn-group" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Live Demo</a>
+                        <a href="#" class="btn btn-secondary" style="padding: 8px 15px; font-size: 0.8rem;">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://via.placeholder.com/400x250/1e293b/06b6d4?text=BoardReality" alt="Project" class="project-img">
+                <div class="project-info">
+                    <h3>BoardReality</h3>
+                    <p>An interactive platform for visual board management and collaboration.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">Tailwind</span>
+                    </div>
+                    <div class="btn-group" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Live Demo</a>
+                        <a href="#" class="btn btn-secondary" style="padding: 8px 15px; font-size: 0.8rem;">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://via.placeholder.com/400x250/1e293b/06b6d4?text=Student+Notes" alt="Project" class="project-img">
+                <div class="project-info">
+                    <h3>Student Notes Hub</h3>
+                    <p>A resource-sharing platform for electrical engineering students.</p>
+                    <div class="project-tags">
+                        <span class="tag">JS</span><span class="tag">Node.js</span><span class="tag">Cloud Storage</span>
+                    </div>
+                    <div class="btn-group" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Live Demo</a>
+                        <a href="#" class="btn btn-secondary" style="padding: 8px 15px; font-size: 0.8rem;">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding" style="background: var(--glass); text-align: center;">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="section-title">Ready to work together?</h2>
+            <p style="margin-bottom: 30px;">Download my full resume to see my detailed academic and technical background.</p>
+            <a href="#" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="fas fa-download" style="margin-right: 10px;"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container section-padding">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p style="margin: 15px 0 30px; color: var(--text-dim);">Feel free to reach out for collaborations or just a friendly hello!</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>mubashair@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 1234567890</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jammu & Kashmir, India</span>
+                    </div>
+                </div>
+            </div>
+            <form id="contactForm" data-aos="fade-left">
+                <input type="text" placeholder="Your Name" required aria-label="Name">
+                <input type="email" placeholder="Your Email" required aria-label="Email">
+                <input type="text" placeholder="Subject" required aria-label="Subject">
+                <textarea rows="5" placeholder="Your Message" required aria-label="Message"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="margin-bottom: 20px;">MH</div>
+            <div class="social-hero" style="margin-bottom: 20px;">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Syed Mubashair Hussain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="scrollTop" onclick="window.scrollTo(0,0)">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Typing Animation
+        var typed = new Typed('#typed', {
+            strings: ['Electrical Engineering Student', 'Future Engineer', 'Web Creator', 'Problem Solver'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll Top Button Logic
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            if (window.scrollY > 300) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+            
+            // Skill Bar Animation Logic
+            const skillsSection = document.getElementById('skills');
+            const bars = document.querySelectorAll('.progress-fill');
+            const sectionPos = skillsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if(sectionPos < screenPos) {
+                bars.forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }
+        });
+
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple Form Submission (Preventing default for demo)
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form.');
+        });
+    </script>
+</body>
+</html>
